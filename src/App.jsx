@@ -1,33 +1,55 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import axios from 'axios'
+
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [products, setProducts] = useState([]);
+  const API_Key = "https://api.escuelajs.co/api/v1/products";
+
+  const getProducts = async () => {
+    try{
+      const response = await axios.get(API_Key);
+      console.log(response.data);
+      setProducts(response.data);
+    }catch(err){
+      console.log("Error", err);
+    }
+  }
+
+  useEffect(() => {
+    getProducts();
+  }, []);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <>  
+     <div>
+      <h1>Product List</h1>
+      <div className='products-wrapper'>
+        {
+          products.map((product, index) => (
+            <div key={index} className='product-card'>
+              <div className='prod-img-wrap'>
+                <img src={product.images} alt={product.title} className='product-img' width="200" height="200"/>
+              </div>
+              <div className='product-info'>
+                <h2 style={{marginBottom:"10px"}}>{product.title}</h2>
+              <p className='product-desc' style={{marginBottom:"25px"}}>{product.description}</p>
+              <div style={{display:"flex", justifyContent:"space-between"}}>
+                <div>
+                  <p style={{fontSize:"10px", marginBottom:"5px"}}>PRICE</p>
+                  <p style={{fontSize:"18px"}}>${product.price}</p>
+                </div>
+                <button className='btn'>Add</button>
+              </div>
+              </div>
+            </div>
+          ))
+        }
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+     </div>
     </>
   )
 }
