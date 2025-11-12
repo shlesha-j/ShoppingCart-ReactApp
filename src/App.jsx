@@ -35,12 +35,12 @@ function App() {
                 <img src={product.images} alt={product.title} className='product-img' width="200" height="200"/>
               </div>
               <div className='product-info'>
-                <h2 style={{marginBottom:"10px"}}>{product.title}</h2>
-              <p className='product-desc' style={{marginBottom:"25px"}}>{product.description}</p>
+                <h2 style={{marginBottom:"10px", color:"black", fontSize:"20px"}}>{product.title}</h2>
+              <p className='product-desc' style={{marginBottom:"25px", color:"grey", fontSize:"18px"}}>{product.description}</p>
               <div style={{display:"flex", justifyContent:"space-between"}}>
                 <div>
-                  <p style={{fontSize:"10px", marginBottom:"5px"}}>PRICE</p>
-                  <p style={{fontSize:"18px"}}>${product.price}</p>
+                  <p style={{fontSize:"10px", marginBottom:"5px", color:"black", fontWeight:"bold"}}>PRICE</p>
+                  <p style={{fontSize:"18px" , color:"black", fontWeight:"bolder"}}>${product.price}</p>
                 </div>
                 <button className='btn'>Add</button>
               </div>
