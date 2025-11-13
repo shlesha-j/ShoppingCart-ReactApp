@@ -1,0 +1,25 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    /* background-color: white; */
+    padding: 15px 0;
+    z-index: 999;
+    background: rgba(255, 255, 255, 0.56);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(19.7px);
+    -webkit-backdrop-filter: blur(19.7px);
+    border: 1px solid rgba(255, 255, 255, 0.33);
+}
+
+.nav-links {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.nav-links .navlink {
+    padding: 40px;
+}

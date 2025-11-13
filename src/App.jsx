@@ -1,56 +1,33 @@
-import { useEffect, useState } from 'react'
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
-import axios from 'axios'
+import Home from './Pages/Home'
+import AboutUs from './Pages/AboutUs'
+import Cart from './Pages/Cart'
+import Contact from './Pages/Contact'
+import Navbar from './component/Navbar/Navbar'
+
 
 
 function App() {
-  const [products, setProducts] = useState([]);
-  const API_Key = "https://api.escuelajs.co/api/v1/products";
 
-  const getProducts = async () => {
-    try{
-      const response = await axios.get(API_Key);
-      console.log(response.data);
-      setProducts(response.data);
-    }catch(err){
-      console.log("Error", err);
-    }
-  }
-
-  useEffect(() => {
-    getProducts();
-  }, []);
 
   return (
-    <>  
-     <div>
-      <h1>Product List</h1>
-      <div className='products-wrapper'>
-        {
-          products.map((product, index) => (
-            <div key={index} className='product-card'>
-              <div className='prod-img-wrap'>
-                <img src={product.images} alt={product.title} className='product-img' width="200" height="200"/>
-              </div>
-              <div className='product-info'>
-                <h2 style={{marginBottom:"10px", color:"black", fontSize:"20px"}}>{product.title}</h2>
-              <p className='product-desc' style={{marginBottom:"25px", color:"grey", fontSize:"18px"}}>{product.description}</p>
-              <div style={{display:"flex", justifyContent:"space-between"}}>
-                <div>
-                  <p style={{fontSize:"10px", marginBottom:"5px", color:"black", fontWeight:"bold"}}>PRICE</p>
-                  <p style={{fontSize:"18px" , color:"black", fontWeight:"bolder"}}>${product.price}</p>
-                </div>
-                <button className='btn'>Add</button>
-              </div>
-              </div>
-            </div>
-          ))
-        }
-      </div>
-     </div>
-    </>
+    
+    <Router>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/" element={<Home/>} />
+            <Route path="/aboutus" element={<AboutUs/>} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/contact" element={<Contact/>} />
+            {/* <Route path='*' element={<NotFound/>}/> */}
+          </Routes>
+        </main>
+      </Router>
   )
 }
 
