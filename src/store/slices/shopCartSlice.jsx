@@ -17,9 +17,6 @@ const shoppingCartSlice = createSlice({
             }
             console.log("Added to cart", action.payload)
         },
-        // deleteFromcart(state, action) {
-        //     return state.filter(cartItem => cartItem.id !== action.payload);
-        // },
         deleteFromcart(state, action) {
             state.cartItems = state.cartItems.filter(
                 (cartItem) => cartItem.id !== action.payload
