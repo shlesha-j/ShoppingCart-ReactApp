@@ -50,7 +50,12 @@
   color: #888;
 }
 
-
+a{
+  text-decoration: none !important;
+}
+.product-price{
+  margin-bottom: unset !important;
+}
 
 .products-wrapper{
   display: flex;
@@ -142,4 +147,15 @@
 h1{
   margin-bottom: 20px;
   color: #646cff;
+}
+
+.cart-item{
+  background-color: black;
+  /* padding: 15px; */
+  border-radius: 10px;
+  /* margin-bottom: 15px; */
+}
+
+.cart-item td{
+  padding: 10px;
 }

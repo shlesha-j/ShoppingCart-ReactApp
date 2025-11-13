@@ -4,7 +4,7 @@ nav {
     left: 0;
     width: 100%;
     /* background-color: white; */
-    padding: 15px 0;
+    padding: 23px  0;
     z-index: 999;
     background: rgba(255, 255, 255, 0.56);
     border-radius: 16px;
@@ -18,8 +18,9 @@ nav {
     display: flex;
     justify-content: space-evenly;
     list-style: none;
+    margin-bottom: unset !important;
 }
 
 .nav-links .navlink {
-    padding: 40px;
+    padding: 26px;
 }

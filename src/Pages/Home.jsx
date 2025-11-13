@@ -40,9 +40,9 @@ function Home() {
               <div style={{display:"flex", justifyContent:"space-between"}}>
                 <div>
                   <p style={{fontSize:"10px", marginBottom:"5px", color:"black", fontWeight:"bold"}}>PRICE</p>
-                  <p style={{fontSize:"18px" , color:"black", fontWeight:"bolder"}}>${product.price}</p>
+                  <p className='product-price' style={{fontSize:"18px" , color:"black", fontWeight:"bolder"}}>${product.price}</p>
                 </div>
-                <button className='btn' onClick={() => dispatch(addTocart(product))}>Add</button>
+                <button className='btn btn-primary' onClick={() => dispatch(addTocart(product))}>Add</button>
               </div>
               </div>
             </div>
