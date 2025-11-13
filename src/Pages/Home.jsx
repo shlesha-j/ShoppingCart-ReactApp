@@ -1,8 +1,13 @@
 import React from 'react'
 import axios from 'axios'
 import { useEffect, useState } from 'react'
+import { addTocart } from '../store/slices/shopCartSlice';
+import { useDispatch } from 'react-redux';
+
+
 function Home() {
-      const [products, setProducts] = useState([]);
+  const [products, setProducts] = useState([]);
+  const dispatch = useDispatch();
   const API_Key = "https://api.escuelajs.co/api/v1/products";
 
   const getProducts = async () => {
@@ -37,7 +42,7 @@ function Home() {
                   <p style={{fontSize:"10px", marginBottom:"5px", color:"black", fontWeight:"bold"}}>PRICE</p>
                   <p style={{fontSize:"18px" , color:"black", fontWeight:"bolder"}}>${product.price}</p>
                 </div>
-                <button className='btn'>Add</button>
+                <button className='btn' onClick={() => dispatch(addTocart(product))}>Add</button>
               </div>
               </div>
             </div>
