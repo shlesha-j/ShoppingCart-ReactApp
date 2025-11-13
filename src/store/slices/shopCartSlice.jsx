@@ -46,10 +46,6 @@ const shoppingCartSlice = createSlice({
                 }
             }
         }
-
-
-
-
     }
 })
 
