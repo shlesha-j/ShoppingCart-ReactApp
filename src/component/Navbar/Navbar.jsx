@@ -6,8 +6,10 @@ import { useSelector } from 'react-redux'
 
 
 function Navbar() {
-    const cartCount = useSelector((state) => 
-        state.cart.cartItems.length);
+    // const cartCount = useSelector((state) => state.cart.cartItems.length);
+    const cartCount = useSelector((state) =>
+    state.cart.cartItems.reduce((total, item) => total + item.quantity, 0));
+
     
     return (
         <nav>
