@@ -21,6 +21,23 @@ nav {
     margin-bottom: unset !important;
 }
 
+.nav-links li{
+    position: relative;
+}
+.nav-links li .cart-item{
+    color:white;
+    background:red;
+    width: 20px;
+    height:20px;
+    border-radius: 50%;
+    position: absolute;
+    top: -7px;
+    left: 12px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
 .nav-links .navlink {
     padding: 26px;
 }

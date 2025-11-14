@@ -1,7 +1,14 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import './Navbar.css'
+import { useSelector } from 'react-redux'
+
+
+
 function Navbar() {
+    const cartCount = useSelector((state) => 
+        state.cart.cartItems.length);
+    
     return (
         <nav>
             <div className="container">
@@ -13,6 +20,9 @@ function Navbar() {
                         <NavLink to="/aboutus" className="navlink">About US</NavLink>
                     </li>
                     <li>
+                        {
+                            cartCount > 0 && <span className='cart-item'>{cartCount}</span>
+                        }
                         <NavLink to="/cart" className="navlink">Cart</NavLink>
                     </li>
                     <li>
