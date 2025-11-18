@@ -12,6 +12,7 @@ const shoppingCartSlice = createSlice({
 
             if (existingItem) {
                 existingItem.quantity += 1;
+                // alert("Already added")
             } else {
                 state.cartItems.push({ ...item, quantity: 1 });
             }
