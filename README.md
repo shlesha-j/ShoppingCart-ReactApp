@@ -1,16 +1,60 @@
-# React + Vite
+# 🛒 All-in-One Shopping Cart (React + Redux)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔗 **Live Demo: https://all-in-one-shopping.netlify.app/
 
-Currently, two official plugins are available:
+A modern e-commerce shopping cart application built using **React.js**, **Redux Toolkit**, and **Axios**.  
+This project demonstrates global state management, API integration, and dynamic cart functionality.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+✅ Fetch products from external API using Axios  
+✅ Global state management using Redux Toolkit  
+✅ Add to Cart functionality  
+✅ Remove items from cart  
+✅ Increase / Decrease product quantity  
+✅ Dynamic total price calculation  
+✅ Centralized cart state using Redux store  
+✅ Fully responsive UI  
+✅ Deployed on Netlify  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Tech Stack
+
+- ⚛️ React.js
+- 🧠 Redux Toolkit
+- 🔄 React-Redux (`useDispatch`, `useSelector`)
+- 📡 Axios (API calls)
+- 🎨 CSS
+- 🌐 Netlify (Deployment)
+
+---
+
+## 🧠 State Management (Redux)
+
+This project uses:
+
+- `createSlice()` for cart logic
+- `configureStore()` to create Redux store
+- `useSelector()` to access state
+- `useDispatch()` to dispatch actions
+- `<Provider store={store}>` to connect app with Redux
+  
+---
+## 🔄 API Integration
+
+- Products are fetched using Axios
+- Data stored in Redux store
+- UI automatically updates when state changes
+
+## 📊 Key Concepts Used
+
+📌 Redux Toolkit
+📌 Global State Management
+📌 Async API Handling
+📌 Component Reusability
+📌 Props & State
+📌 Array Methods (.map, .filter, .reduce)
+📌 Conditional Rendering
