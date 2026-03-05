@@ -1,6 +1,6 @@
 # 🛒 All-in-One Shopping Cart (React + Redux)
 
-🔗 **Live Demo: https://all-in-one-shopping.netlify.app/
+🔗 **Live Demo: https://stellar-chebakia-5cef0c.netlify.app/
 
 A modern e-commerce shopping cart application built using **React.js**, **Redux Toolkit**, and **Axios**.  
 This project demonstrates global state management, API integration, and dynamic cart functionality.
